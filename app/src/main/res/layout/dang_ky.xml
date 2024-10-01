@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dangNhap"
+    android:id="@+id/dangKy"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -22,7 +22,7 @@
         android:layout_margin="16dp"
         android:fontFamily="cursive"
         android:gravity="center"
-        android:text="Food is Life"
+        android:text="@string/nameapp"
         android:textSize="48sp" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -31,7 +31,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
-        android:hint="Email hoặc Số điện thoại">
+        android:hint="@string/email_phone_DK">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email_phone"
@@ -47,7 +47,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
-        android:hint="Mật khẩu"
+        android:hint="@string/pwDK"
         app:endIconMode="password_toggle"> <!-- Sử dụng endIconMode để thêm icon con mắt -->
 
         <com.google.android.material.textfield.TextInputEditText
@@ -58,12 +58,12 @@
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Sử dụng TextInputLayout cho mật khẩu -->
+    <!-- Sử dụng TextInputLayout cho nhập lại mật khẩu -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="Nhập lại mật khẩu"
+        android:hint="@string/pw_nhaplai"
         app:endIconMode="password_toggle"> <!-- Sử dụng endIconMode để thêm icon con mắt -->
 
         <com.google.android.material.textfield.TextInputEditText
@@ -75,13 +75,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_DangNhap"
+        android:id="@+id/btn_DangKy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="16dp"
-        android:text="Đăng ký"
+        android:text="@string/dangky"
         android:textSize="16sp" />
 
     <TableLayout
@@ -95,19 +95,20 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/tv_BanChuaCoTK"
+                android:id="@+id/tv_BanDaCoTK"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Bạn chưa đã có tài khoản?"
+                android:layout_marginEnd="5dp"
+                android:text="@string/yes_acc"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tv_DangKy"
+                android:id="@+id/tv_DangNhap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:text="Đăng nhập"
+                android:focusable="true"
+                android:text="@string/dangnhap"
                 android:textColor="#FF5722"
                 android:textSize="16sp"
                 android:textStyle="bold" />

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dangNhap"
+    android:id="@+id/dangKy"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -22,14 +22,14 @@
         android:layout_margin="16dp"
         android:fontFamily="cursive"
         android:gravity="center"
-        android:text="Food is Life"
+        android:text="@string/food_is_life"
         android:textSize="48sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="Email hoặc Số điện thoại">
+        android:hint="@string/email_phone">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email_phone"
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="Mật khẩu"
+        android:hint="@string/pass"
         app:endIconMode="password_toggle"> <!-- Sử dụng endIconMode để thêm icon con mắt -->
 
         <com.google.android.material.textfield.TextInputEditText
@@ -58,10 +58,11 @@
         android:id="@+id/tv_QuenMK"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         android:clickable="true"
+        android:focusable="true"
         android:gravity="right"
-        android:text="Quên mật khẩu?"
+        android:text="@string/forget_pass"
         android:textColor="#2196F3"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -71,7 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Đăng nhập"
+        android:text="@string/dang_nhap"
         android:textSize="16sp" />
 
     <TableLayout
@@ -88,8 +89,8 @@
                 android:id="@+id/tv_BanChuaCoTK"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Bạn chưa có tài khoản?"
+                android:layout_marginEnd="5dp"
+                android:text="@string/no_acc"
                 android:textSize="16sp" />
 
             <TextView
@@ -97,7 +98,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:text="Đăng ký"
+                android:focusable="true"
+                android:text="@string/dang_ky"
                 android:textColor="#FF5722"
                 android:textSize="16sp"
                 android:textStyle="bold" />
