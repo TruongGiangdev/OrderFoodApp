@@ -3,7 +3,6 @@ package com.example.oderfoodapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -18,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oderfoodapp.fragment.CartFrag;
 import com.example.oderfoodapp.fragment.ChangePWFrag;
@@ -25,7 +25,12 @@ import com.example.oderfoodapp.fragment.FavoriteFrag;
 import com.example.oderfoodapp.fragment.HistoryFrag;
 import com.example.oderfoodapp.fragment.ManageAccFrag;
 import com.example.oderfoodapp.fragment.TrangChu;
+import com.example.oderfoodapp.fragment.ThongTinMonFrag;
+import com.example.oderfoodapp.object.Food;
+import com.example.oderfoodapp.recyclerViewAdapter.CartAdapter;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.List;
 
 public class TrangChung extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -40,6 +45,10 @@ public class TrangChung extends AppCompatActivity implements NavigationView.OnNa
     private final int FRAG_FAVORITE = 5;
 
     private int currentFrag = FRAG_TRANG_CHU;
+
+    private RecyclerView recyclerView;
+    private CartAdapter productAdapter;
+    private List<Food> productList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +102,9 @@ public class TrangChung extends AppCompatActivity implements NavigationView.OnNa
             v.setPadding(0, systemBars.top, 0, 0); // Chỉ đặt padding trên cho thanh trạng thái
             return insets;
         });
+
+
+
     }
 
     //xửa lý logic các item trong menu toolbar
@@ -127,7 +139,7 @@ public class TrangChung extends AppCompatActivity implements NavigationView.OnNa
             }
         } else if (id == R.id.item_favorite) {
             if(currentFrag != FRAG_FAVORITE){
-                replaceFrag(new FavoriteFrag());
+                replaceFrag(new ThongTinMonFrag());
                 currentFrag = FRAG_FAVORITE;
             }
         } else if (id == R.id.item_logout) {

@@ -6,8 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oderfoodapp.R;
+import com.example.oderfoodapp.object.Food;
+import com.example.oderfoodapp.recyclerViewAdapter.CartAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CartFrag extends Fragment {
 
@@ -19,6 +27,10 @@ public class CartFrag extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private RecyclerView recyclerViewCart;
+    private CartAdapter cartAdapter;
+    private List<Food> cartItemList;
 
     public CartFrag() {
         // Required empty public constructor
@@ -44,9 +56,34 @@ public class CartFrag extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.cart_frag, container, false);
+        View view = inflater.inflate(R.layout.cart_frag, container, false);
+
+        // Khởi tạo RecyclerView và Adapter
+        recyclerViewCart = view.findViewById(R.id.listFoodOrder);
+        recyclerViewCart.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        // Dữ liệu mẫu cho các item trong giỏ hàng
+        cartItemList = new ArrayList<>();
+        cartItemList.add(new Food("Gà rán Texas Original", 2, 400, "garena"));
+        cartItemList.add(new Food("Gà rán Texas", 3, 200, "garena1"));
+        cartItemList.add(new Food("Gà rán Texas", 3, 200, "garena1"));
+        cartItemList.add(new Food("Gà rán Texas", 3, 200, "garena1"));
+        cartItemList.add(new Food("Gà rán Texas", 3, 200, "garena1"));
+        cartItemList.add(new Food("Gà rán Texas", 3, 200, "garena1"));
+        cartItemList.add(new Food("Gà rán Texas", 3, 200, "garena1"));
+        cartItemList.add(new Food("Gà rán Texas", 3, 200, "garena1"));
+        cartItemList.add(new Food("Gà rán Texas", 3, 200, "garena1"));
+        cartItemList.add(new Food("Gà rán Texas", 3, 200, "garena1"));
+
+        // Cài đặt Adapter cho RecyclerView
+        cartAdapter = new CartAdapter(getContext() ,cartItemList);
+        recyclerViewCart.setAdapter(cartAdapter);
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewCart.getContext(), LinearLayoutManager.VERTICAL);
+        recyclerViewCart.addItemDecoration(dividerItemDecoration);
+
+        return view;
     }
 }

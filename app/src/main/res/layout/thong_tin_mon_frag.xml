@@ -3,17 +3,137 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E91E63"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="20dp"
     tools:context=".fragment.ManageAccFrag">
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp">
+
+            <ImageView
+                android:id="@+id/imgFood"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/garena1" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tên món ăn -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtFoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="8dp"
+                android:text="Gà rán Texas"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <!-- Đánh giá sao -->
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:rating="5"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:transformPivotX="0dp"
+                android:transformPivotY="0dp"
+                android:layout_marginLeft="40dp"
+                android:theme="@style/RatingBar"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100$"
+                android:textSize="20sp"
+                android:textColor="@android:color/holo_red_dark"/>
+
+            <TextView
+                android:id="@+id/txtOldPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3000$"
+                android:textSize="20sp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="5dp"/>
+    </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đánh giá"
+        android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="thông tin món"
-        android:textColor="@color/white"
-        android:textSize="30sp" />
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/footer_cart_frag"
+            android:padding="10dp"
+            android:gravity="center"> <!-- Căn giữa nội dung -->
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/button_background_white"
+                android:text="Thêm vào giỏ hàng"
+                android:textColor="#37ABCF"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

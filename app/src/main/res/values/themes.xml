@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.OderFoodApp" parent="Base.Theme.OderFoodApp" />
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#b4b3b5</item>
+        <item name="colorControlActivated">#FFCC00</item>
+    </style>
 </resources>
