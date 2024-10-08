@@ -29,5 +29,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Quản lý tài khoản</string>
     <string name="home">Trang chủ</string>
+    <string name="thanh_toan">Thanh toán</string>
 
 </resources>

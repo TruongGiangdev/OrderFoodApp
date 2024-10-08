@@ -3,8 +3,6 @@ package com.example.oderfoodapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -102,32 +100,38 @@ public class TrangChung extends AppCompatActivity implements NavigationView.OnNa
         if(id == R.id.item_trang_chu){
             if(currentFrag != FRAG_TRANG_CHU){
                 replaceFrag(new TrangChu());
+                setTitle("Trang chủ");
                 currentFrag = FRAG_TRANG_CHU;
             }
         }
         else if(id == R.id.item_manage_acc){
             if(currentFrag != FRAG_MANAGE_ACC){
                 replaceFrag(new ManageAccFrag());
+                setTitle("Quản Lý Tài Khoản");
                 currentFrag = FRAG_MANAGE_ACC;
             }
         } else if (id == R.id.item_change_pw) {
             if(currentFrag != FRAG_CHANGE_PW){
                 replaceFrag(new ChangePWFrag());
+                setTitle("Đổi mật khẩu");
                 currentFrag = FRAG_CHANGE_PW;
             }
         } else if (id == R.id.item_history) {
             if(currentFrag != FRAG_HISTORY){
                 replaceFrag(new HistoryFrag());
+                setTitle("Lịch sử");
                 currentFrag = FRAG_HISTORY;
             }
         } else if (id == R.id.item_cart) {
             if(currentFrag != FRAG_CART){
                 replaceFrag(new CartFrag());
+                setTitle("Giỏ hàng");
                 currentFrag = FRAG_CART;
             }
         } else if (id == R.id.item_favorite) {
             if(currentFrag != FRAG_FAVORITE){
                 replaceFrag(new FavoriteFrag());
+                setTitle("Yêu thích");
                 currentFrag = FRAG_FAVORITE;
             }
         } else if (id == R.id.item_logout) {

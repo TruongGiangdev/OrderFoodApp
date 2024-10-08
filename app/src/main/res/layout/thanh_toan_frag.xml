@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="thanh toán"
+        android:text="@string/thanh_toan"
         android:textColor="@color/white"
         android:textSize="30sp" />
 
