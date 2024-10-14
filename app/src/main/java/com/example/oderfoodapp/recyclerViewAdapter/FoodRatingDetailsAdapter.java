@@ -12,19 +12,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oderfoodapp.R;
-import com.example.oderfoodapp.object.FoodDetails;
+import com.example.oderfoodapp.object.FoodRatingDetails;
 
 import java.util.List;
 
 public class FoodDetailsAdapter extends RecyclerView.Adapter<FoodDetailsAdapter.FoodDetailsViewHolder> {
 
     private Context context;
-    private List<FoodDetails> foodDetailsList;
+    private List<FoodRatingDetails> foodRatingDetailsList;
 
     // Constructor cho Adapter
-    public FoodDetailsAdapter(Context context, List<FoodDetails> foodDetailsList) {
+    public FoodDetailsAdapter(Context context, List<FoodRatingDetails> foodRatingDetailsList) {
         this.context = context;
-        this.foodDetailsList = foodDetailsList;
+        this.foodRatingDetailsList = foodRatingDetailsList;
     }
 
     @NonNull
@@ -36,25 +36,25 @@ public class FoodDetailsAdapter extends RecyclerView.Adapter<FoodDetailsAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull FoodDetailsViewHolder holder, int position) {
-        FoodDetails foodDetails = foodDetailsList.get(position);
+        FoodRatingDetails foodRatingDetails = foodRatingDetailsList.get(position);
 
         // Load hình ảnh đại diện
-        int imageResource = holder.itemView.getContext().getResources().getIdentifier(foodDetails.getImgAvatar(), "drawable", holder.itemView.getContext().getPackageName());
+        int imageResource = holder.itemView.getContext().getResources().getIdentifier(foodRatingDetails.getImgAvatar(), "drawable", holder.itemView.getContext().getPackageName());
         holder.imgAvatar.setImageResource(imageResource);
 
         // Set tên khách hàng
-        holder.customerName.setText(foodDetails.getCustomerName());
+        holder.customerName.setText(foodRatingDetails.getCustomerName());
 
         // Set đánh giá sao
-        holder.ratingBarReview.setRating(foodDetails.getRatingBarReview());
+        holder.ratingBarReview.setRating(foodRatingDetails.getRatingBarReview());
 
         // Set mô tả đánh giá
-        holder.customerReview.setText(foodDetails.getCustomerReview());
+        holder.customerReview.setText(foodRatingDetails.getCustomerReview());
     }
 
     @Override
     public int getItemCount() {
-        return foodDetailsList.size();
+        return foodRatingDetailsList.size();
     }
 
     // ViewHolder để giữ các view bên trong từng item của RecyclerView
@@ -66,7 +66,6 @@ public class FoodDetailsAdapter extends RecyclerView.Adapter<FoodDetailsAdapter.
 
         public FoodDetailsViewHolder(@NonNull View itemView) {
             super(itemView);
-
             imgAvatar = itemView.findViewById(R.id.imgAvatar);
             customerName = itemView.findViewById(R.id.customerName);
             ratingBarReview = itemView.findViewById(R.id.ratingBarReview);
